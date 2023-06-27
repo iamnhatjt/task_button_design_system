@@ -33,7 +33,7 @@ class ShowBrandReverse extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Text('Brand Button'),
+            const Text('Brand reverse Button'),
             Wrap(
               runAlignment: WrapAlignment.center,
               spacing: 8,

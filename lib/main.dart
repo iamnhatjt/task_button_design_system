@@ -1,5 +1,7 @@
 import 'package:button_sl/pages/show_brand_button.dart';
 import 'package:button_sl/pages/show_brand_reverse.dart';
+import 'package:button_sl/pages/show_neutral_button.dart';
+import 'package:button_sl/pages/show_neutral_reverse_button.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -67,6 +69,50 @@ class MyHomePage extends StatelessWidget {
               color: Colors.amber,
               child: const Text(
                 'Show brand reverse button',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const ShowNeutralButton(),
+                ),
+              );
+            },
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              color: Colors.amber,
+              child: const Text(
+                'Show neutral button',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const ShowNeutralButtonReverse(),
+                ),
+              );
+            },
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              color: Colors.amber,
+              child: const Text(
+                'Show neutral reverse button',
                 style: TextStyle(
                   color: Colors.white,
                 ),
