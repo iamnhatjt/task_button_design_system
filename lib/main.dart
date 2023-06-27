@@ -6,6 +6,21 @@ void main() {
   runApp(const MyApp());
 }
 
+class CheckBoxWidget extends StatelessWidget {
+  const CheckBoxWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Checkbox(
+      value: false,
+      onChanged: (_) {},
+      side: MaterialStateBorderSide.resolveWith(
+        (states) => const BorderSide(width: 2.0, color: Colors.blueGrey),
+      ),
+    );
+  }
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -33,64 +48,92 @@ class MyHomePage extends StatelessWidget {
           'Button Design Sysmtem...',
         ),
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            Text('Brand Button'),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            const Text('Brand Button'),
+            Wrap(
+              runAlignment: WrapAlignment.center,
+              spacing: 8,
+              runSpacing: 12,
               children: [
-                SLBrand(
-                  label: 'Button',
-                  type: SLType.soild,
-                  shape: SLShape.pill,
-                  size: SLSize.large,
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                SLBrand(
-                  label: 'Button',
-                  type: SLType.soild,
-                  shape: SLShape.pill,
-                  size: SLSize.medium,
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                SLBrand(
-                  label: 'Button',
-                  type: SLType.soild,
-                  shape: SLShape.pill,
-                  size: SLSize.small,
-                ),
+                for (SLContentType contentType in SLContentType.values)
+                  for (SLType type in SLType.values)
+                    for (SLShape shape in SLShape.values)
+                      for (SLSize size in SLSize.values)
+                        SLBrand(
+                          size: size,
+                          label: 'Button',
+                          shape: shape,
+                          type: type,
+                          contentType: contentType,
+                          leading: const CheckBoxWidget(),
+                        ),
               ],
             ),
-            Row(
+            const SizedBox(
+              height: 100,
+            ),
+            Wrap(
+              runAlignment: WrapAlignment.center,
+              spacing: 8,
+              runSpacing: 12,
               children: [
-                SLBrand(
-                  label: 'Button',
-                  type: SLType.soild,
-                  shape: SLShape.pill,
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                SLBrand(
-                  label: 'Button',
-                  type: SLType.soild,
-                  shape: SLShape.pill,
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                SLBrand(
-                  label: 'Button',
-                  type: SLType.soild,
-                  shape: SLShape.pill,
-                ),
+                for (SLType type in SLType.values)
+                  for (SLShape shape in SLShape.values)
+                    for (SLSize size in SLSize.values)
+                      SLBrand(
+                        size: size,
+                        label: 'Button',
+                        shape: shape,
+                        type: type,
+                        diabled: true,
+                      ),
               ],
-            )
+            ),
+            const SizedBox(
+              height: 100,
+            ),
+            Wrap(
+              runAlignment: WrapAlignment.center,
+              spacing: 8,
+              runSpacing: 12,
+              children: [
+                for (SLType type in SLType.values)
+                  for (SLShape shape in SLShape.values)
+                    for (SLSize size in SLSize.values)
+                      SLBrand(
+                        size: size,
+                        label: 'Button',
+                        shape: shape,
+                        type: type,
+                        loading: true,
+                      ),
+              ],
+            ),
+            const SizedBox(
+              height: 100,
+            ),
+            Wrap(
+              runAlignment: WrapAlignment.center,
+              spacing: 8,
+              runSpacing: 12,
+              children: [
+                for (SLType type in SLType.values)
+                  for (SLShape shape in SLShape.values)
+                    for (SLSize size in SLSize.values)
+                      SLBrand(
+                        size: size,
+                        label: 'Button',
+                        shape: shape,
+                        type: type,
+                        skeleton: true,
+                      ),
+              ],
+            ),
+            const SizedBox(
+              height: 100,
+            ),
           ],
         ),
       ),

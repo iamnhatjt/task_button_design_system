@@ -28,7 +28,7 @@ extension Padding on SLSize {
       case SLSize.medium:
         return const TextStyle(
           fontSize: 14,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w400,
         );
       default:
         return const TextStyle(
@@ -135,7 +135,7 @@ extension BorderStyleCustom on SLType {
         return Border.all(
           width: 1,
           color: primaryColor,
-          style: BorderStyle.solid,
+          style: BorderStyle.none,
         );
       case SLType.outline:
         return Border.all(
