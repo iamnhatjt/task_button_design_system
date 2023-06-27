@@ -97,6 +97,7 @@ extension WidgetSetting on SLContentType {
                   children: [
                     Row(
                       children: [
+                        labelText ?? const SizedBox.shrink(),
                         leading != null
                             ? Row(
                                 mainAxisSize: MainAxisSize.min,
@@ -108,7 +109,6 @@ extension WidgetSetting on SLContentType {
                                 ],
                               )
                             : const SizedBox.shrink(),
-                        labelText ?? const SizedBox.shrink(),
                       ],
                     )
                   ],
